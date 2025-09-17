@@ -1,0 +1,10 @@
+data: data/merged_tlogo/data.yaml
+model: yolov11m.pt
+imgsz: 896
+epochs: 100
+batch: -1
+seed: 42
+project: runs/train
+name: tlogo_v11m
+pretrained: true
+device: 0
