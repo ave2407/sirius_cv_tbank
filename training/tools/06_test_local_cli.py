@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import argparse, json, mimetypes
 from pathlib import Path
 import cv2, numpy as np, requests
@@ -92,3 +90,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""
+python training/tools/06_test_local_cli.py demo/test_2logo.jpg --save_json 
+"""

@@ -1,5 +1,5 @@
 """
-python training/tools/export_onnx.py --weights runs/train/tlogo_v11m/weights/best.pt --out weights/best.onnx
+python training/tools/03_export_onnx.py --weights C:/Users/Vladimir/Downloads/artifacts_yolo/best.pt --out weights/best.onnx
 
 """
 
@@ -10,7 +10,7 @@ from ultralytics import YOLO
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--weights", required=True, help="path to best.pt")
-ap.add_argument("--img", type=int, default=896)
+ap.add_argument("--img", type=int, default=960)
 ap.add_argument("--opset", type=int, default=12)
 ap.add_argument("--out", default="weights/best.onnx")
 args = ap.parse_args()
