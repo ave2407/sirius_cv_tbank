@@ -59,24 +59,27 @@ ENV по умолчанию (можно переопределить при за
 sirius_cv/
 ├── server/                    # REST API + инференс
 │   ├── app.py                 # маршруты и валидация
-│   ├── inference.py           # препроцесс → ORT → постпроцесс (NMS, clip)
+│   ├── inference.py           # препроцесс -> ORT -> постпроцесс
 │   ├── schemas.py             # Pydantic модели ответа/ошибок
-│   └── utils.py               # letterbox, NMS, преобразования
+│   └── utils.py               # letterbox, преобразования
 ├── data/
 │   ├── merged_tlogo/          # итоговый YOLO‑датасет (train/valid/test)
 │   ├── interim/auto_owlvit/   # автолейблы OWLv2 (images/labels)
 │   ├── annotations/{coco,yolo}
 │   ├── raw/  sample/  sample2/
 ├── training/
-│   ├── configs/               # (yaml и пр.)
-│   └── scripts/
-│       ├── 00_sample_random.py        # отбор случайных изображений
-│       ├── 01_auto_annotate.py        # zero‑shot автолейблинг (OWLv2)
-│       ├── 02_download_rf_dataset.py  # загрузка датасетов Roboflow
-│       └── 02_find_iou.py             # свип IoU/NMS на валидации
-├── docker/Dockerfile
-├── weights/                   # best.onnx (не хранится в гите)
-└── test.py                    # утилита для экспорта дерева и содержимого проекта
+│   ├── configs/
+│   ├── tools/
+│   │   ├── 00_download_ds.py
+│   │   ├── 01_auto_annotate.py
+│   │   ├── 02_sample_random.py
+│   │   ├── 03_export_onnx.py
+│   │   ├── 04_validate.py
+│   │   ├── 05_find_iou.py
+│   │   └── 06_test_local_cli.py
+│   └── train_cli.py
+├── Dockerfile
+└── weights/                
 ```
 
 ---
